@@ -4,6 +4,9 @@ author: "Ishrat Chowdhury"
 date: "September 11, 2019"
 output: html_document
 ---
+
+Homework 1
+
 Install required packages
 
 ```{r}
@@ -17,12 +20,10 @@ Matrix, Arrays, and Vector Practice
 m <- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,byrow=TRUE)
 m
 
-
 v1 <- c(1,2,3,4)
 v2 <- c(6,7,8,9)
 m1 <- rbind(v1,v2)
 m1
-
 
 m2 <- cbind(v1,v2)
 m2
@@ -30,11 +31,7 @@ m2
 v <- 101:200
 v[seq(from = 1, to = 50, by = 2)]
 
-
 ```
-
-
-Now let's try these Challenges
 
 CHALLENGE 1
 
@@ -49,8 +46,8 @@ v1
 attempts to extract every third word
 
 ```{r}
-
-
+x<- v1[c(1,4,7,10,13,16,19,22)]
+x
 ```
 
 CHALLENGE 2
@@ -60,9 +57,7 @@ m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
 m
 ```
 
-
- extract columns 2, 3 and 6 and assign to varibale x
-
+extract columns 2, 3 and 6 and assign to varibale x
 
 ```{r}
 x<-c(m[,2], m[,3], m[,6])
@@ -70,7 +65,19 @@ x
 
 ```
 
+extract row 6 and row 8 and assign to variable x 
 
+```{r}
+x<-c(m[6,], m[8,])
+x
+```
 
+extract elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
 
+```{r}
+x<-c(m[2:6, 2:9])
+x
+```
+
+CHALLENGE 3
 
