@@ -161,6 +161,42 @@ column 8 gets replaced with a and b but now everything is a character
 Lists and Data Frames Practice 
 
 ```{r}
+s <- c("this","is","a","vector","of","strings")
+m <- matrix(data=1:40, nrow=5, ncol=8) # this is a matrix
+b <- FALSE
+l <- list(s, m, b)
+l
+l[[2]]
+```
+
+CHALLENGE 4
+
+#not sure if I should start with conactonating or list to begin with
+
+```{r}
+Platyrrhini<- list("Cebidae","Atelidae","Pitheciidae")
+Catarrhini<- list("Cercopithecidae","Hylobatidae","Hominidae")
+Haplorini<- list(Platyrrhini, Catarrhini)
+Tarsioidea<- list("Tarsiidae")
+Lorisoidea<- list("Lorisidae", "Galagidae")
+Lemuroidea<- list("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Strepsirhini<- list(Lorisoidea, Lemuroidea)
+Primates<- list(Haplorini, Strepsirhini)
+Primates
 
 ```
 
+
+```{r}
+Platyrrhini<- c("Cebidae","Atelidae","Pitheciidae")
+Catarrhini<- c("Cercopithecidae","Hylobatidae","Hominidae")
+Haplorini<- list(Platyrrhini, Catarrhini)
+Tarsioidea<- c("Tarsiidae")
+Lorisoidea<- c("Lorisidae", "Galagidae")
+Lemuroidea<- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Strepsirhini<- list(Lorisoidea, Lemuroidea)
+Primates<- list(Haplorini, Strepsirhini)
+Primates
+```
+
+#I think concatonating at first looks better but I would like to clean this up more
