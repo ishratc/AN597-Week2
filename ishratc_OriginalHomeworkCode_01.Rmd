@@ -213,8 +213,26 @@ df[,3]
 
 CHALLENGE 5
 
+create matrix
+
 ```{r}
 w<-matrix(c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol =  3, byrow = TRUE)
 w
+```
+
+coerce it as a data frame
+
+```{r}
+wdf<- as.data.frame(w)
+wdf
+```
+
+coerce the second column to be logical-valued
+coerce the third column to be factor-valued
+
+```{r}
+wdf[,2] = as.logical(2)
+wdf[,3] = as.factor(3)
+str(wdf)
 ```
 
