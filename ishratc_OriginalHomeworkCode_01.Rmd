@@ -45,6 +45,8 @@ v1
 ```
 attempts to extract every third word
 
+#not sure how to do this with the str_split() function
+
 ```{r}
 x<- v1[c(1,4,7,10,13,16,19,22)]
 x
@@ -80,4 +82,35 @@ x
 ```
 
 CHALLENGE 3
+
+Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
+
+```{r}
+a <- array(data=400:1, dim=c(5,5,4,4))
+a
+```
+
+Given this matrix, what would the following return?
+
+```{r}
+a[1, 1, 1, 2]
+
+```
+the element in table 1,2 at row 1 column 1
+
+
+```{r}
+a[2, 3, 2, ]
+
+```
+
+the elements in column row 2 column 3 of every "2nd"" table 
+#is there a better way to verbalize what it is selecting?
+
+```{r}
+a[1:5, 1:5, 3, 3]
+
+```
+
+print rows 1-5 and columns 1-5 for table 3,3. this is basically a copy of table 3,3.
 
