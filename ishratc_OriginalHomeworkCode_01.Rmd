@@ -4,31 +4,7 @@ author: "Ishrat Chowdhury"
 date: "September 11, 2019"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
+Install required packages
 
 ```{r}
 install.packages("stringr")
@@ -58,7 +34,6 @@ v[seq(from = 1, to = 50, by = 2)]
 ```
 
 
-
 Now let's try these Challenges
 
 CHALLENGE 1
@@ -71,10 +46,28 @@ v1<-c("Stately,","plump","Buck","Mulligan","came","from","the","stairhead,","bea
 v1
 
 ```
+attempts to extract every third word
+
+```{r}
+
+
+```
+
+CHALLENGE 2
+
+```{r}
+m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
+m
+```
+
+
+ extract columns 2, 3 and 6 and assign to varibale x
 
 
 ```{r}
-srs
+x<-c(m[,2], m[,3], m[,6])
+x
+
 ```
 
 
