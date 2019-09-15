@@ -1,0 +1,95 @@
+---
+title: "ishratc_FinalHomeworkCode_01"
+author: "Ishrat Chowdhury"
+date: "September 15, 2019"
+output: html_document
+---
+#Homework 1
+`
+##Challenge 1
+
+```{r}
+
+v1<-("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.") #create the vector
+v1 #check the vector
+
+v2<-gsub("[[:punct:]]","",v1) #remove punctuation from vector
+v2 #check vector now with removed punctuation
+
+v3<-strsplit(v2, " ") # use str_split command and split by space
+v3 #check "vector"
+str(v3) #check the structure of the "vector", it is actually a list we need to change it back to a vector
+
+v4<-unlist(v3) #change it from a list to a vector
+str(v4) #check the structure of the vector, now it is actually a vector
+
+v5<-v4[seq(from = 1, to = 22, by = 3)] #split the vector by subsetting
+v5 #check now you should have every third element of the vector
+
+```
+
+##CHALLENGE 2
+
+```{r}
+m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)#create matrix
+m # check matrix
+
+x<-c(m[,2], m[,3], m[,6]) # extract columns 2, 3 and 6 and assign to varibale x
+x #check results
+
+x<-c(m[6,], m[8,]) # extract row 6 and row 8 and assign to variable x 
+x #check results
+
+x<-c(m[2:6, 2:9]) #extract elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
+x #check results
+```
+
+##CHALLENGE 3
+
+```{r}
+a <- array(data=400:1, dim=c(5,5,4,4)) #Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
+a #check the matrix
+
+a[1, 1, 1, 2] #the element in table 1,2 at row 1 column 1 #300
+a[2, 3, 2, ] #the elements in column row 2 column 3 of every "2nd"" table #364 264 164 64
+a[1:5, 1:5, 3, 3] #print rows 1-5 and columns 1-5 for table 3,3. this is basically a copy of table 3,3.
+
+```
+
+##CHALLENGE 4
+
+```{r}
+#first assign values
+Platyrrhini<- c("Cebidae","Atelidae","Pitheciidae") 
+Catarrhini<- c("Cercopithecidae","Hylobatidae","Hominidae")
+#now list this for the next category
+Haplorini<- list(Platyrrhini, Catarrhini)
+#assign a name sow when it is printed it does not show up as just row 1 and so on
+names(Haplorini)<-c("Platyrrhini","Catarrhini")
+#repeat for the other cataegories
+Tarsioidea<- c("Tarsiidae")
+Lorisoidea<- c("Lorisidae", "Galagidae")
+Lemuroidea<- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Strepsirhini<- list(Lorisoidea, Lemuroidea)
+names(Strepsirhini)<-c("Lorisoidea", "Lemuroidea")
+Primates<- list(Haplorini, Strepsirhini)
+Primates
+```
+
+##CHALLENGE 5
+
+
+```{r}
+w<-matrix(c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol =  3, byrow = TRUE) #create matrix
+w #check matrix
+
+wdf<- as.data.frame #coerce it as a data frame
+wdf # check data frame
+
+
+wdf[,2]=as.logical(2) # coerce the second column to be logical-valued
+wdf[,3] = as.factor(3) # coerce the third column to be factor-valued
+str(wdf) # check the structure of the data frame
+
+```
+
