@@ -5,7 +5,7 @@ date: "September 15, 2019"
 output: html_document
 ---
 #Homework 1
-`
+
 ##Challenge 1
 
 ```{r}
@@ -83,11 +83,10 @@ Primates
 w<-matrix(c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol =  3, byrow = TRUE) #create matrix
 w #check matrix
 
-wdf<- as.data.frame #coerce it as a data frame
+wdf<- as.data.frame(w) #coerce it as a data frame
 wdf # check data frame
 
-
-wdf[,2]=as.logical(2) # coerce the second column to be logical-valued
+wdf[,2] = as.logical(2) # coerce the second column to be logical-valued
 wdf[,3] = as.factor(3) # coerce the third column to be factor-valued
 str(wdf) # check the structure of the data frame
 
