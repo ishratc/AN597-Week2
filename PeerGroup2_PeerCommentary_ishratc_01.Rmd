@@ -1,0 +1,253 @@
+---
+title: "PeerGroup2_PeerCommentary_ishratc_01"
+author: "Ishrat Chowdhury"
+date: "September 15, 2019"
+output: html_document
+---
+
+---
+title: "ishratc_OriginalHomeworkCode_01"
+author: "Ishrat Chowdhury"
+date: "September 11, 2019"
+output: html_document
+---
+
+#Homework 1
+
+Matrix, Arrays, and Vector Practice
+
+```{r}
+m <- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,byrow=TRUE)
+m
+
+v1 <- c(1,2,3,4)
+v2 <- c(6,7,8,9)
+m1 <- rbind(v1,v2)
+m1
+
+m2 <- cbind(v1,v2)
+m2
+
+v <- 101:200
+v[seq(from = 1, to = 50, by = 2)]
+
+```
+
+##CHALLENGE 1
+
+vector of 1 word character strings ...
+
+```{r}
+
+v1<-c("Stately,","plump","Buck","Mulligan","came","from","the","stairhead,","bearing","a","bowl","of","lather","on","which","a","mirror","and","a","razor","lay","crossed.")
+v1
+l<-length(v1)
+l?
+```
+#peer comment: attempts to extract every third  use teh function seq().
+
+not sure how to do this with the str_split() function,
+#peer comment:check by ?stringr::str_split on how to use thsi function.
+
+#peer comment:change the vector to make it one sentence, and then get rid of the punctuation
+
+
+
+```{r}
+x<- v1[c(1,4,7,10,13,16,19,22)]
+x
+```
+
+##CHALLENGE 2
+
+```{r}
+m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
+m
+```
+
+extract columns 2, 3 and 6 and assign to varibale x
+
+```{r}
+x<-c(m[,2], m[,3], m[,6])
+x
+
+```
+
+extract row 6 and row 8 and assign to variable x 
+
+```{r}
+x<-c(m[6,], m[8,])
+x
+```
+
+extract elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
+
+```{r}
+x<-c(m[2:6, 2:9])
+x
+```
+
+##CHALLENGE 3
+
+Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
+
+```{r}
+a <- array(data=400:1, dim=c(5,5,4,4))
+a
+```
+
+Given this matrix, what would the following return?
+
+```{r}
+a[1, 1, 1, 2]
+
+```
+the element in table 1,2 at row 1 column 1
+
+
+```{r}
+a[2, 3, 2, ]
+
+```
+
+the elements in column row 2 column 3 of every "2nd"" table 
+is there a better way to verbalize what it is selecting?
+
+```{r}
+a[1:5, 1:5, 3, 3]
+
+```
+
+print rows 1-5 and columns 1-5 for table 3,3. this is basically a copy of table 3,3.
+#peer comment: instead of using code, just give the answer
+Practice overwriting
+
+```{r}
+m[7,1] <- 564
+m
+```
+
+replaces row 7 column 1 with new value
+
+```{r}
+m[,8] <- 2
+m
+```
+
+replaces column 8 with value 2, changesx made before are still present
+
+```{r}
+m[2:5,4:8] <- 1
+m
+```
+
+replace row 2-4 and column 5 -8 with 1. overwrites previous commands. 
+
+```{r}
+m[2:5,4:8] <- c(20,19,18,17)
+m
+```
+
+replaces each row with new value while overwriting 
+
+```{r}
+m[2:5,4:8] <- matrix(data = c(20:1), nrow=4,ncol=5,byrow=TRUE)
+m
+```
+
+a new matrix was embedded within this matrix
+
+```{r}
+m[,8] <- c("a","b")
+m
+```
+
+column 8 gets replaced with a and b but now everything is a character 
+
+Lists and Data Frames Practice 
+
+```{r}
+s <- c("this","is","a","vector","of","strings")
+m <- matrix(data=1:40, nrow=5, ncol=8) # this is a matrix
+b <- FALSE
+l <- list(s, m, b)
+l
+l[[2]]
+```
+
+##CHALLENGE 4
+
+not sure if I should start with conactonating or list to begin with
+
+```{r}
+Platyrrhini<- list("Cebidae","Atelidae","Pitheciidae")
+Catarrhini<- list("Cercopithecidae","Hylobatidae","Hominidae")
+Haplorini<- list(Platyrrhini, Catarrhini)
+Tarsioidea<- list("Tarsiidae")
+Lorisoidea<- list("Lorisidae", "Galagidae")
+Lemuroidea<- list("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Strepsirhini<- list(Lorisoidea, Lemuroidea)
+Primates<- list(Haplorini, Strepsirhini)
+Primates
+
+```
+
+
+```{r}
+Platyrrhini<- c("Cebidae","Atelidae","Pitheciidae")
+Catarrhini<- c("Cercopithecidae","Hylobatidae","Hominidae")
+Haplorini<- list(Platyrrhini, Catarrhini)
+Tarsioidea<- c("Tarsiidae")
+Lorisoidea<- c("Lorisidae", "Galagidae")
+Lemuroidea<- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Strepsirhini<- list(Lorisoidea, Lemuroidea)
+Primates<- list(Haplorini, Strepsirhini)
+Primates
+```
+#peer comment:do the names()to name each list.
+I think concatonating at first looks better but I would like to clean this up more
+need help making this more presentable
+
+Data frame practice 
+
+```{r}
+df <- read.csv("C:/Users/Ishrat/Documents/AN597-Week2/random_people", sep =",", header = TRUE, stringsAsFactors = FALSE)
+# only print select columns
+df[,c(1,3,4,11,12)]
+str(df)
+df[,3]
+```
+
+##CHALLENGE 5
+
+create matrix
+
+```{r}
+w<-matrix(c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol =  3, byrow = TRUE)
+w
+```
+
+coerce it as a data frame
+
+```{r}
+wdf<- as.data.frame(w)
+wdf
+```
+
+coerce the second column to be logical-valued
+coerce the third column to be factor-valued
+
+```{r}
+wdf[,2] = as.logical(2)
+wdf[,3] = as.factor(3)
+str(wdf)
+```
+
+
+##Problems to discuss for peer comentrary
+
+-need help using str_split() function
+-I can see what's happening in the 4D array but can we discuss what exactly is the differenct betweent the third and fourth dimmensions
+-I tried both lsiting and conncatonating the phylogeny however any tips to clean this up some more, I'm nto sure if this is the way it should look
+
+
