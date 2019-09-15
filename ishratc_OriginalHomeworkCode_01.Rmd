@@ -5,14 +5,7 @@ date: "September 11, 2019"
 output: html_document
 ---
 
-Homework 1
-
-Install required packages
-
-```{r}
-install.packages("stringr")
-library(stringr)
-```
+#Homework 1
 
 Matrix, Arrays, and Vector Practice
 
@@ -33,7 +26,7 @@ v[seq(from = 1, to = 50, by = 2)]
 
 ```
 
-CHALLENGE 1
+##CHALLENGE 1
 
 vector of 1 word character strings ...
 
@@ -45,14 +38,14 @@ v1
 ```
 attempts to extract every third word
 
-#not sure how to do this with the str_split() function
+not sure how to do this with the str_split() function
 
 ```{r}
 x<- v1[c(1,4,7,10,13,16,19,22)]
 x
 ```
 
-CHALLENGE 2
+##CHALLENGE 2
 
 ```{r}
 m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
@@ -81,7 +74,7 @@ x<-c(m[2:6, 2:9])
 x
 ```
 
-CHALLENGE 3
+##CHALLENGE 3
 
 Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
 
@@ -105,7 +98,7 @@ a[2, 3, 2, ]
 ```
 
 the elements in column row 2 column 3 of every "2nd"" table 
-#is there a better way to verbalize what it is selecting?
+is there a better way to verbalize what it is selecting?
 
 ```{r}
 a[1:5, 1:5, 3, 3]
@@ -169,9 +162,9 @@ l
 l[[2]]
 ```
 
-CHALLENGE 4
+##CHALLENGE 4
 
-#not sure if I should start with conactonating or list to begin with
+not sure if I should start with conactonating or list to begin with
 
 ```{r}
 Platyrrhini<- list("Cebidae","Atelidae","Pitheciidae")
@@ -199,19 +192,20 @@ Primates<- list(Haplorini, Strepsirhini)
 Primates
 ```
 
-#I think concatonating at first looks better but I would like to clean this up more
+I think concatonating at first looks better but I would like to clean this up more
+need help making this more presentable
 
 Data frame practice 
 
 ```{r}
-df <- read.csv("C:/Users/Ishrat/Documents/GitHub/random_people_rawcsv", sep =",", header = TRUE, stringsAsFactors = FALSE)
+df <- read.csv("C:/Users/Ishrat/Documents/AN597-Week2/random_people", sep =",", header = TRUE, stringsAsFactors = FALSE)
 # only print select columns
 df[,c(1,3,4,11,12)]
 str(df)
 df[,3]
 ```
 
-CHALLENGE 5
+##CHALLENGE 5
 
 create matrix
 
@@ -235,4 +229,11 @@ wdf[,2] = as.logical(2)
 wdf[,3] = as.factor(3)
 str(wdf)
 ```
+
+
+##Problems to discuss for peer comentrary
+
+-need help using str_split() function
+-I can see what's happening in the 4D array but can we discuss what exactly is the differenct betweent the third and fourth dimmensions
+-I tried both lsiting and conncatonating the phylogeny however any tips to clean this up some more, I'm nto sure if this is the way it should look
 
